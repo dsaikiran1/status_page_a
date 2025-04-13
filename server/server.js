@@ -27,7 +27,7 @@ const server = http.createServer(app); // <-- Create server with Express app
 // Setup Socket.IO and attach to HTTP server
 const io = new SocketIO(server, {
   cors: {
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: process.env.CLIENT_URL || "https://67fb6c6ce4f132a19b6d7cc2--statuspagee.netlify.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
