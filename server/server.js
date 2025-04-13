@@ -37,13 +37,24 @@ const io = new SocketIO(server, {
 app.set("io", io);
 
 // Middleware
-app.use(express.json());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://status-page-a.vercel.app"  // your Vercel frontend domain
+];
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
+
 
 // Connect to MongoDB
 const connectDB = async () => {
