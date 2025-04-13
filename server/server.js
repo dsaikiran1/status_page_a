@@ -27,7 +27,7 @@ const server = http.createServer(app); // <-- Create server with Express app
 // Setup Socket.IO and attach to HTTP server
 const io = new SocketIO(server, {
   cors: {
-    origin: process.env.CLIENT_URL || "https://statuspagee.netlify.app",
+    origin: process.env.CLIENT_URL || "https://statuspagee.netlify.app" || "https://status-page-a-nuh2.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -38,6 +38,7 @@ app.set("io", io);
 
 // Middleware
 const allowedOrigins = [
+  "https://status-page-a-nuh2.vercel.app",
   "https://67fb6c6ce4f132a19b6d7cc2--statuspagee.netlify.app",
   "https://statuspagee.netlify.app",
   "http://localhost:5173"  // your Vercel frontend domain
