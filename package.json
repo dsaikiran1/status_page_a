@@ -1,0 +1,17 @@
+{
+    "name": "my-fullstack-app",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+        "build": "npm run build --prefix client",
+        "start": "npm run build && cross-env NODE_ENV=production node server/server.js"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2",
+        "cross-env": "^7.0.3",
+        "dotenv": "^16.5.0"
+    }
+}
+
+
