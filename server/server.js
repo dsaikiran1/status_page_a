@@ -63,15 +63,17 @@ app.use("/api/services", serviceRoutes);
 app.use("/api/incidents", incidentRoutes);
 app.use("/api/public", publicRoutes);
 
-// Serve static files in production
-if (process.env.NODE_ENV === "production") {
-  const clientDistPath = path.join(__dirname, "../client/dist");
-  app.use(express.static(clientDistPath));
 
-  app.get("/{*splat}", (req, res) => {
-    res.sendFile(path.join(clientDistPath, "index.html"));
-  });
-}
+// Serve static files in production
+//if (process.env.NODE_ENV === "production") {
+  //const clientDistPath = path.join(__dirname, "../client/dist");
+  //app.use(express.static(clientDistPath));
+
+  //app.get("/{*splat}", (req, res) => {
+    //res.sendFile(path.join(clientDistPath, "index.html"));
+  //});
+//}
+
 
 // Default route
 app.get("/", (req, res) => {
