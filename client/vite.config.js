@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
       port: 5173,
       proxy: {
         '/api': {
-          target: 'http://localhost:5000',
+          target: 'https://status-page-hwzrsnl07-dsaikiran1s-projects.vercel.app/',
           changeOrigin: true,
           secure: false,
         },
