@@ -38,6 +38,7 @@ app.set("io", io);
 
 // Middleware
 const allowedOrigins = [
+  "https://67fb6c6ce4f132a19b6d7cc2--statuspagee.netlify.app",
   "http://localhost:5173",
   "https://status-page-a.vercel.app"  // your Vercel frontend domain
 ];
